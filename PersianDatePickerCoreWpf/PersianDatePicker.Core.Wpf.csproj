@@ -14,11 +14,23 @@
     <Authors>Ali Ramezani</Authors>
     <Company>https://aliram.ir</Company>
     <Description>Persian (Shamsi) DatePicker control for WPF with calendar and date selection support. Author: Ali Ramezani, Email: a.ramezani1364@gmail.com</Description>
-    <PackageProjectUrl>https://github.com/yourusername/PersianDatePicker</PackageProjectUrl> <!-- لینک گیت‌هاب واقعی -->
+    <PackageProjectUrl>https://github.com/aliramdev/PersianDatePicker.Core</PackageProjectUrl> <!-- لینک گیت‌هاب واقعی -->
     <!--<PackageLicenseExpression>MIT</PackageLicenseExpression> --><!-- اگر لایسنس نداری می‌تونی این خط رو حذف کنی -->
-    <RepositoryUrl>https://github.com/yourusername/PersianDatePicker</RepositoryUrl>
+    <RepositoryUrl>https://github.com/aliramdev/PersianDatePicker.Core</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>WPF; PersianDatePicker; Shamsi; Calendar; UI; Control</PackageTags>
+	<PackageLicenseFile>LICENSE</PackageLicenseFile>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="LICENSE.txt" />
+    <None Remove="README.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="LICENSE.txt" />
+    <Content Include="README.md" />
+  </ItemGroup>
 
 </Project>

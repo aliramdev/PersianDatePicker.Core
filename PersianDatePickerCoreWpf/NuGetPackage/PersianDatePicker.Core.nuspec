@@ -1,0 +1,19 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>PersianDatePicker.Core</id>
+    <version>1.0.0</version>
+    <authors>Ali Ramezani</authors>
+    <owners>Ali Ramezani</owners>
+    <!--<license type="expression">MIT</license>-->
+    <projectUrl>https://github.com/aliramdev/PersianDatePicker.Core</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>PersianDatePicker is a WPF control for selecting Persian dates with features like Today and Clear buttons.</description>
+    <tags>WPF Persian DatePicker Jalali Shamsi</tags>
+    <repository type="git" url="https://github.com/aliramdev/PersianDatePicker.Core" />
+  </metadata>
+
+  <files>
+    <file src="bin\Release\PersianDatePicker.Core.dll" target="lib\net9.0" />
+  </files>
+</package>
