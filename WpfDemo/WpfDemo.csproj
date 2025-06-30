@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <Reference Include="PersianDatePicker.Core.Wpf">
-      <HintPath>..\PersianDatePicker.Core.Wpf\bin\Debug\net9.0-windows\PersianDatePicker.Core.Wpf.dll</HintPath>
+      <HintPath>..\PersianDatePickerCoreWpf\bin\Release\net9.0-windows\PersianDatePicker.Core.Wpf.dll</HintPath>
     </Reference>
   </ItemGroup>
 

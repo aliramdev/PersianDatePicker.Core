@@ -1,36 +1,45 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net9.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWPF>true</UseWPF>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Title>PersianDatePickerCoreWpf</Title>
-    <Description>Persian Date PickerCore For Wpf. Developer: Ali Ramezani</Description>
-    <PackageProjectUrl>https://github.com/aliramdev/PersianDatePicker.Core</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/aliramdev/PersianDatePicker.Core</RepositoryUrl>
-    <PackageId>PersianDatePicker.Core.Wpf</PackageId>
-    <Version>1.0.0</Version>  <!-- شماره نسخه مناسب -->
-    <Authors>Ali Ramezani</Authors>
-    <Company>https://aliram.ir</Company>
-    <Description>Persian (Shamsi) DatePicker control for WPF with calendar and date selection support. Author: Ali Ramezani, Email: a.ramezani1364@gmail.com</Description>
-    <PackageProjectUrl>https://github.com/aliramdev/PersianDatePicker.Core</PackageProjectUrl> <!-- لینک گیت‌هاب واقعی -->
-    <!--<PackageLicenseExpression>MIT</PackageLicenseExpression> --><!-- اگر لایسنس نداری می‌تونی این خط رو حذف کنی -->
-    <RepositoryUrl>https://github.com/aliramdev/PersianDatePicker.Core</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageTags>WPF; PersianDatePicker; Shamsi; Calendar; UI; Control</PackageTags>
-	<PackageLicenseFile>LICENSE</PackageLicenseFile>
-	<PackageReadmeFile>README.md</PackageReadmeFile>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net9.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<ImplicitUsings>enable</ImplicitUsings>
 
-  <ItemGroup>
-    <None Remove="LICENSE.txt" />
-    <None Remove="README.md" />
-  </ItemGroup>
+		<!-- Metadata های اصلی -->
+		<Title>PersianDatePickerCoreWpf</Title>
+		<PackageId>PersianDatePicker.Core.Wpf</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>Ali Ramezani</Authors>
+		<Company>https://aliram.ir</Company>
+		<Description>Persian (Shamsi) DatePicker control for WPF with calendar and date selection support. Author: Ali Ramezani, Email: a.ramezani1364@gmail.com</Description>
 
+		<!-- اطلاعات مخزن -->
+		<PackageProjectUrl>https://github.com/aliramdev/PersianDatePicker.Core</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/aliramdev/PersianDatePicker.Core</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+
+		<!-- انتخاب یکی از دو گزینه زیر برای لایسنس -->
+		<!-- گزینه 1: استفاده از عبارت لایسنس (ترجیحی برای MIT) -->
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+		<!-- یا گزینه 2: استفاده از فایل لایسنس -->
+		<!-- <PackageLicenseFile>LICENSE</PackageLicenseFile> -->
+
+		<!-- سایر تنظیمات -->
+		<PackageTags>WPF; PersianDatePicker; Shamsi; Calendar; UI; Control</PackageTags>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
+
+	<!-- اگر از گزینه فایل لایسنس استفاده می‌کنید، این بخش را فعال کنید -->
+	<!--
   <ItemGroup>
-    <Content Include="LICENSE.txt" />
-    <Content Include="README.md" />
+    <None Include="LICENSE" Pack="true" PackagePath="\" />
   </ItemGroup>
+  -->
+
+	<ItemGroup>
+		<None Include="README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
 
 </Project>
