@@ -4,7 +4,7 @@
 ![Downloads](https://img.shields.io/nuget/dt/PersianDatePicker.Core.Wpf?color=green)
 ![License](https://img.shields.io/github/license/aliramdev/PersianDatePicker.Core?color=orange)
 
-## یک کنترل تقویم شمسی برای WPF
+## کنترل تقویم شمسی DatePicker برای WPF
 
 تقویم شمسی سبک، قابل‌سفارشی‌سازی و سازگار با WPF برای پروژه‌های دات‌نت
 
