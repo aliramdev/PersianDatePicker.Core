@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36221.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersianDatePicker.Core.Wpf", "PersianDatePicker.Core.Wpf\PersianDatePicker.Core.Wpf.csproj", "{DA5652E5-53B8-4158-8E9E-3730F3102DA7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{80BD0891-9E83-4DD0-9A31-A95FA6B46436}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wpf", "Wpf", "{C536EA8C-392F-40CF-BE34-0FE0D3D36CE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDemo", "WpfDemo\WpfDemo.csproj", "{0027CE13-92E9-4307-B08C-C8986A1D8ACC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA5652E5-53B8-4158-8E9E-3730F3102DA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA5652E5-53B8-4158-8E9E-3730F3102DA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA5652E5-53B8-4158-8E9E-3730F3102DA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA5652E5-53B8-4158-8E9E-3730F3102DA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0027CE13-92E9-4307-B08C-C8986A1D8ACC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0027CE13-92E9-4307-B08C-C8986A1D8ACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0027CE13-92E9-4307-B08C-C8986A1D8ACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0027CE13-92E9-4307-B08C-C8986A1D8ACC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DA5652E5-53B8-4158-8E9E-3730F3102DA7} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{C536EA8C-392F-40CF-BE34-0FE0D3D36CE3} = {80BD0891-9E83-4DD0-9A31-A95FA6B46436}
+		{0027CE13-92E9-4307-B08C-C8986A1D8ACC} = {C536EA8C-392F-40CF-BE34-0FE0D3D36CE3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {230D29CD-D734-40A1-B0A0-88D7456474E1}
+	EndGlobalSection
+EndGlobal

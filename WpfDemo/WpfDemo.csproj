@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="PersianDatePicker.Core.Wpf">
+      <HintPath>..\PersianDatePicker.Core.Wpf\bin\Debug\net9.0-windows\PersianDatePicker.Core.Wpf.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
