@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
+using System.Windows.Media;
 
 namespace PersianDatePicker_Core_Wpf.Controls
 {
@@ -62,6 +63,19 @@ namespace PersianDatePicker_Core_Wpf.Controls
             set => SetValue(TextBoxStyleProperty, value);
         }
 
+        public static readonly DependencyProperty DayButtonStyleProperty =
+            DependencyProperty.Register(
+                nameof(DayButtonStyle),
+                typeof(Style),
+                typeof(PersianDatePicker),
+                new PropertyMetadata(null));
+
+        public Style DayButtonStyle
+        {
+            get => (Style)GetValue(DayButtonStyleProperty);
+            set => SetValue(DayButtonStyleProperty, value);
+        }
+
         static PersianDatePicker()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(PersianDatePicker),
@@ -102,6 +116,9 @@ namespace PersianDatePicker_Core_Wpf.Controls
                 if (CalendarStyle != null)
                     _calendar.Style = CalendarStyle;
 
+                if (DayButtonStyle != null)
+                    _calendar.DayButtonStyle = DayButtonStyle;
+
                 _calendar.DateSelected += date =>
                 {
                     SelectedDate = date;
@@ -109,5 +126,20 @@ namespace PersianDatePicker_Core_Wpf.Controls
                 };
             }
         }
+
+        public static readonly DependencyProperty PopupBackgroundProperty =
+    DependencyProperty.Register(
+        nameof(PopupBackground),
+        typeof(Brush),
+        typeof(PersianDatePicker),
+        new PropertyMetadata(Brushes.White));
+
+        public Brush PopupBackground
+        {
+            get => (Brush)GetValue(PopupBackgroundProperty);
+            set => SetValue(PopupBackgroundProperty, value);
+        }
+
     }
+
 }

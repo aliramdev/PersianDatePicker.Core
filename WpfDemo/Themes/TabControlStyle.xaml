@@ -1,0 +1,106 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--  رنگ‌ها  -->
+    <Color x:Key="TabBackgroundColor">#CECECE</Color>
+    <Color x:Key="TabSelectedColor">#1083FF</Color>
+    <Color x:Key="TabHoverColor">#82B1FF</Color>
+    <Color x:Key="TabTextColor">#333333</Color>
+    <Color x:Key="TabSelectedTextColor">White</Color>
+
+    <!--  استایل پیش‌فرض TabControl  -->
+    <Style TargetType="TabControl">
+        <Setter Property="FlowDirection" Value="RightToLeft" />
+        <Setter Property="Background" Value="#EDEDED" />
+        <Setter Property="BorderBrush" Value="#CCCCCC" />
+        <!--  رنگ دلخواه Border  -->
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabControl">
+                    <Grid KeyboardNavigation.TabNavigation="Local">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <!--  تب‌ها  -->
+                        <TabPanel
+                            Name="HeaderPanel"
+                            Grid.Row="0"
+                            Margin="2,2,2,0"
+                            Panel.ZIndex="1"
+                            Background="Transparent"
+                            IsItemsHost="True" />
+
+                        <!--  بدنه محتوا با Border گرد  -->
+                        <Border
+                            Grid.Row="1"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="3,8,8,8">
+                            <!--  👈 گوشه گرد اینجاست  -->
+                            <ContentPresenter
+                                Name="PART_SelectedContentHost"
+                                Margin="4"
+                                ContentSource="SelectedContent" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!--  استایل پیش‌فرض TabItem  -->
+    <Style TargetType="TabItem">
+        <Setter Property="Foreground" Value="#333333" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Padding" Value="15,5" />
+        <Setter Property="Margin" Value="1,1" />
+        <Setter Property="Background" Value="#ECECEC" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Border
+                        x:Name="Bd"
+                        Padding="{TemplateBinding Padding}"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="Transparent"
+                        BorderThickness="2"
+                        CornerRadius="10,10,0,0">
+                        <ContentPresenter
+                            x:Name="HeaderContent"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            ContentSource="Header"
+                            RecognizesAccessKey="True"
+                            TextElement.Foreground="{TemplateBinding Foreground}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="Bd" Property="Background" Value="#CDCDCD" />
+                            <Setter TargetName="HeaderContent" Property="TextElement.Foreground" Value="White" />
+                            <Setter Property="FontWeight" Value="Bold" />
+                            <Setter TargetName="Bd" Property="BorderBrush" Value="#CDCDCD" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Bd" Property="Background" Value="#82B1FF" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="HeaderContent" Property="TextElement.Foreground" Value="Gray" />
+                            <Setter TargetName="Bd" Property="Background" Value="#EEE" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+
+
+</ResourceDictionary>

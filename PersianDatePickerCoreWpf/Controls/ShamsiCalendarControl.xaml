@@ -5,7 +5,7 @@
     xmlns:local="clr-namespace:PersianDatePicker_Core_Wpf.Controls"
     x:Name="Root"
     Width="300"
-    Height="330">
+    Height="auto">
 
     <UserControl.Resources>
         <SolidColorBrush x:Key="CalendarBackground" Color="White" />
@@ -13,6 +13,38 @@
         <SolidColorBrush x:Key="CalendarHeaderBackground" Color="#F0F0F0" />
         <SolidColorBrush x:Key="CalendarDayHighlight" Color="#1083FF" />
         <SolidColorBrush x:Key="TodayBackground" Color="#C0E6FF" />
+
+        <!--  استایل پیش‌فرض دکمه روز  -->
+        <Style x:Key="DefaultDayButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="36" />
+            <Setter Property="Height" Value="36" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="4">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#E0F7FA" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#B2EBF2" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </UserControl.Resources>
 
     <Border
@@ -34,13 +66,10 @@
                         <Path
                             Width="16"
                             Height="16"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
                             Data="M 10,0 L 0,8 L 10,16 Z"
                             Fill="Black"
                             Stretch="Uniform" />
                     </Button>
-
                     <TextBlock
                         x:Name="MonthYearText"
                         Margin="10,0"
@@ -50,7 +79,6 @@
                         FontSize="14"
                         FontWeight="Bold"
                         Foreground="Black" />
-
                     <Button
                         x:Name="NextMonthBtn"
                         Width="30"
@@ -61,14 +89,10 @@
                         <Path
                             Width="16"
                             Height="16"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
                             Data="M 0,0 L 10,8 L 0,16 Z"
                             Fill="Black"
                             Stretch="Uniform" />
                     </Button>
-
-                    <!--  دکمه تغییر نمایش  -->
                     <Button
                         x:Name="SwitchViewButton"
                         Width="20"
@@ -78,19 +102,12 @@
                         Background="Transparent"
                         BorderThickness="0"
                         Cursor="Hand">
-                        <Viewbox
-                            Width="12"
-                            Height="12"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Stretch="Uniform">
+                        <Viewbox Width="12" Height="12">
                             <Path Data="M 0,0 L 10,0 L 5,6 Z" Fill="Black" />
                         </Viewbox>
                     </Button>
-
                 </DockPanel>
             </Border>
-
 
             <!--  روزهای هفته  -->
             <UniformGrid Margin="0,5,0,5" Columns="7">
@@ -136,14 +153,14 @@
                     x:Name="ClearButton"
                     Width="30"
                     Height="30"
-                    Background="Transparent"
-                    BorderBrush="Gray"
+                    Background="#D32F2F"
+                    BorderBrush="#C2185B"
                     BorderThickness="1"
                     Content="✕"
                     Cursor="Hand"
                     DockPanel.Dock="Left"
+                    Foreground="White"
                     ToolTip="پاک‌کردن تاریخ" />
-
                 <Button
                     x:Name="TodayButton"
                     Width="70"

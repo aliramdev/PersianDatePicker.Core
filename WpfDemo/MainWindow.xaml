@@ -13,9 +13,8 @@
     <StackPanel Margin="20">
         <ctrls:PersianDatePicker
             x:Name="MyDatePicker"
-            Width="200"
-            Height="40"
-            Margin="0,0,0,10" />
+            DayButtonStyle="{StaticResource DefaultDayButtonStyle}"
+            SelectedDate="{Binding MyDate}" />
         <Button
             Width="200"
             Click="ShowSelectedDate_Click"

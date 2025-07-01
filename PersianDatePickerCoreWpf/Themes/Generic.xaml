@@ -7,76 +7,77 @@
     <!--  کانورتر تاریخ میلادی به شمسی  -->
     <conv:DateTimeToPersianStringConverter x:Key="DateToPersianConverter" />
 
-    <!--  استایل پیش‌فرض PersianDatePicker  -->
+    <!--  استایل PersianDatePicker  -->
     <Style TargetType="{x:Type local:PersianDatePicker}">
-        <Setter Property="BorderBrush" Value="Gray" />
+        <Setter Property="Background" Value="{DynamicResource DefaultBackgroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource DefaultForegroundBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource DefaultBorderBrush}" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="Background" Value="White" />
-        <Setter Property="Padding" Value="4" />
+        <Setter Property="Padding" Value="6" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="14" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:PersianDatePicker}">
                     <Grid>
                         <Border
-                            x:Name="Border"
                             Padding="{TemplateBinding Padding}"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="4">
-                            <DockPanel>
+                            CornerRadius="6">
+                            <DockPanel LastChildFill="True">
+                                <!--  دکمه آیکن بازکننده  -->
                                 <Button
                                     x:Name="PART_Button"
                                     Width="25"
                                     Background="Transparent"
-                                    BorderBrush="{x:Null}"
+                                    BorderThickness="0"
                                     Cursor="Hand"
                                     DockPanel.Dock="Right"
-                                    Focusable="False">
-                                    <Viewbox
-                                        Width="16"
-                                        Height="16"
-                                        Stretch="Uniform">
+                                    Focusable="False"
+                                    Style="{x:Null}">
+                                    <Viewbox Width="16" Height="16">
                                         <Canvas Width="24" Height="24">
                                             <Path
-                                                Data="M2 12C2 8.22876 2 6.34315 3.17157 5.17157C4.34315 4 6.22876 4 10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C22 6.34315 22 8.22876 22 12V14C22 17.7712 22 19.6569 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V12Z"
-                                                Stroke="#1C274C"
-                                                StrokeEndLineCap="Round"
-                                                StrokeStartLineCap="Round"
+                                                Data="M2 12C2 8.2 2 6.3 3.2 5.2C4.3 4 6.2 4 10 4H14C17.7 4 19.6 4 20.8 5.2C22 6.3 22 8.2 22 12V14C22 17.7 22 19.6 20.8 20.8C19.6 22 17.7 22 14 22H10C6.2 22 4.3 22 3.2 20.8C2 19.6 2 17.7 2 14V12Z"
+                                                Stroke="{TemplateBinding Foreground}"
                                                 StrokeThickness="1.5" />
                                             <Path
                                                 Data="M7 4V2.5"
-                                                Stroke="#1C274C"
-                                                StrokeEndLineCap="Round"
-                                                StrokeStartLineCap="Round"
+                                                Stroke="{TemplateBinding Foreground}"
                                                 StrokeThickness="1.5" />
                                             <Path
                                                 Data="M17 4V2.5"
-                                                Stroke="#1C274C"
-                                                StrokeEndLineCap="Round"
-                                                StrokeStartLineCap="Round"
+                                                Stroke="{TemplateBinding Foreground}"
                                                 StrokeThickness="1.5" />
                                             <Path
                                                 Data="M2.5 9H21.5"
-                                                Stroke="#1C274C"
-                                                StrokeEndLineCap="Round"
-                                                StrokeStartLineCap="Round"
+                                                Stroke="{TemplateBinding Foreground}"
                                                 StrokeThickness="1.5" />
                                         </Canvas>
                                     </Viewbox>
                                 </Button>
 
-
+                                <!--  جعبه نمایش تاریخ  -->
                                 <TextBox
                                     x:Name="PART_TextBox"
+                                    Margin="0"
+                                    Padding="0"
                                     VerticalContentAlignment="Center"
                                     Background="Transparent"
                                     BorderThickness="0"
+                                    FontFamily="{TemplateBinding FontFamily}"
+                                    FontSize="{TemplateBinding FontSize}"
+                                    Foreground="{TemplateBinding Foreground}"
                                     IsReadOnly="True"
+                                    Style="{x:Null}"
                                     Text="{Binding SelectedDate, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource DateToPersianConverter}}" />
                             </DockPanel>
                         </Border>
 
+                        <!--  Popup انتخاب تاریخ  -->
                         <Popup
                             x:Name="PART_Popup"
                             AllowsTransparency="True"
@@ -84,86 +85,14 @@
                             StaysOpen="False">
                             <Border
                                 Margin="0,2,0,0"
-                                Background="White"
-                                BorderBrush="Gray"
+                                Background="{TemplateBinding PopupBackground}"
+                                BorderBrush="{DynamicResource DefaultBorderBrush}"
                                 BorderThickness="1"
                                 CornerRadius="4">
                                 <local:ShamsiCalendarControl x:Name="PART_Calendar" />
                             </Border>
                         </Popup>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
 
-    <!--  استایل کامبوباکس با آیکن SVG برای دکمه بازشونده  -->
-    <Style x:Key="CustomComboBoxStyle" TargetType="ComboBox">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="ComboBox">
-                    <Grid>
-                        <ToggleButton
-                            x:Name="ToggleButton"
-                            Width="24"
-                            Height="24"
-                            HorizontalAlignment="Right"
-                            Background="Transparent"
-                            BorderThickness="0"
-                            Focusable="False"
-                            IsChecked="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}">
-
-                            <Grid>
-                                <Path
-                                    Data="M2 12C2 8.22876 2 6.34315 3.17157 5.17157C4.34315 4 6.22876 4 10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C22 6.34315 22 8.22876 22 12V14C22 17.7712 22 19.6569 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V12Z"
-                                    Stroke="#1C274C"
-                                    StrokeEndLineCap="Round"
-                                    StrokeStartLineCap="Round"
-                                    StrokeThickness="1.5" />
-                                <Path
-                                    Data="M7 4V2.5"
-                                    Stroke="#1C274C"
-                                    StrokeEndLineCap="Round"
-                                    StrokeStartLineCap="Round"
-                                    StrokeThickness="1.5" />
-                                <Path
-                                    Data="M17 4V2.5"
-                                    Stroke="#1C274C"
-                                    StrokeEndLineCap="Round"
-                                    StrokeStartLineCap="Round"
-                                    StrokeThickness="1.5" />
-                                <Path
-                                    Data="M2.5 9H21.5"
-                                    Stroke="#1C274C"
-                                    StrokeEndLineCap="Round"
-                                    StrokeStartLineCap="Round"
-                                    StrokeThickness="1.5" />
-                            </Grid>
-                        </ToggleButton>
-
-                        <ContentPresenter
-                            Margin="3,0,28,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Center"
-                            Content="{TemplateBinding SelectionBoxItem}"
-                            ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" />
-
-                        <Popup
-                            x:Name="Popup"
-                            AllowsTransparency="True"
-                            Focusable="False"
-                            IsOpen="{TemplateBinding IsDropDownOpen}"
-                            Placement="Bottom"
-                            PopupAnimation="Fade">
-                            <Border
-                                Background="White"
-                                BorderBrush="Gray"
-                                BorderThickness="1">
-                                <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
-                                    <ItemsPresenter />
-                                </ScrollViewer>
-                            </Border>
-                        </Popup>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

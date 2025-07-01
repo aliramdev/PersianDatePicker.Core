@@ -1,5 +1,4 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -16,6 +15,20 @@ namespace PersianDatePicker_Core_Wpf.Controls
         private DateTime? _selectedDate;
         private ViewMode _currentView = ViewMode.Day;
         private bool _isAnimating = false;
+
+        // تعریف DependencyProperty برای استایل دکمه روز
+        public static readonly DependencyProperty DayButtonStyleProperty =
+            DependencyProperty.Register(
+                nameof(DayButtonStyle),
+                typeof(Style),
+                typeof(ShamsiCalendarControl),
+                new PropertyMetadata(null));
+
+        public Style DayButtonStyle
+        {
+            get => (Style)GetValue(DayButtonStyleProperty);
+            set => SetValue(DayButtonStyleProperty, value);
+        }
 
         public ShamsiCalendarControl()
         {
@@ -50,7 +63,6 @@ namespace PersianDatePicker_Core_Wpf.Controls
 
                 MonthYearText.MouseLeftButtonDown += (s2, e2) => ToggleView();
 
-                // اینجا هندلر دکمه SwitchViewButton وصل می‌شود
                 SwitchViewButton.Click += (s2, e2) => ToggleView();
             };
         }
@@ -147,10 +159,7 @@ namespace PersianDatePicker_Core_Wpf.Controls
                     Margin = new Thickness(2),
                     Tag = current,
                     Padding = new Thickness(6),
-                    Background = Brushes.Transparent,
-                    BorderBrush = Brushes.LightGray,
-                    BorderThickness = new Thickness(1),
-                    FontWeight = FontWeights.Normal
+                    Style = DayButtonStyle,  // اینجا استایل را ست می‌کنیم
                 };
 
                 if (_selectedDate.HasValue && current.Date == _selectedDate.Value.Date)
@@ -192,7 +201,8 @@ namespace PersianDatePicker_Core_Wpf.Controls
                     Tag = i + 1,
                     Margin = new Thickness(4),
                     Padding = new Thickness(8),
-                    FontWeight = FontWeights.Normal
+                    FontWeight = FontWeights.Normal,
+                    Style = DayButtonStyle // یا می‌تونی استایل جدا برای ماه‌ها بسازی
                 };
 
                 int currentMonth = _calendar.GetMonth(_currentDate);
@@ -230,7 +240,8 @@ namespace PersianDatePicker_Core_Wpf.Controls
                     Content = y.ToString(),
                     Tag = y,
                     Margin = new Thickness(4),
-                    Padding = new Thickness(8)
+                    Padding = new Thickness(8),
+                    Style = DayButtonStyle // اینجا هم اگر خواستی
                 };
 
                 if (y == centerYear)

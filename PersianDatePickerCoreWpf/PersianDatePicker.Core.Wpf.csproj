@@ -9,7 +9,7 @@
 		<!-- Metadata های اصلی -->
 		<Title>PersianDatePickerCoreWpf</Title>
 		<PackageId>PersianDatePicker.Core.Wpf</PackageId>
-		<Version>1.0.0</Version>
+		<Version>1.1.0</Version>
 		<Authors>Ali Ramezani</Authors>
 		<Company>https://aliram.ir</Company>
 		<Description>Persian (Shamsi) DatePicker control for WPF with calendar and date selection support. Author: Ali Ramezani, Email: a.ramezani1364@gmail.com</Description>

@@ -5,11 +5,20 @@
     xmlns:local="clr-namespace:WpfDemo"
     StartupUri="MainWindow.xaml">
     <Application.Resources>
+
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/PersianDatePicker.Core.Wpf;component/Themes/Generic.xaml" />
+                <ResourceDictionary Source="Themes/ButtonStyle.xaml" />
+                <ResourceDictionary Source="Themes/CheckBoxStyle.xaml" />
+                <ResourceDictionary Source="Themes/TextBoxStyle.xaml" />
+                <ResourceDictionary Source="Themes/ComboBoxStyle.xaml" />
+                <ResourceDictionary Source="Themes/TabControlStyle.xaml" />
+                <ResourceDictionary Source="Themes/DatePickerStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
+
+
     </Application.Resources>
 
 </Application>

@@ -1,0 +1,96 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ctrls="clr-namespace:PersianDatePicker_Core_Wpf.Controls;assembly=PersianDatePicker.Core.Wpf">
+
+    <Style x:Key="PersianDatePickerStyle" TargetType="ctrls:PersianDatePicker">
+        <Setter Property="Background" Value="White" />
+        <Setter Property="BorderBrush" Value="#DDDDDD" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="6" />
+        <Setter Property="Height" Value="36" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="#333" />
+        <Setter Property="PopupBackground" Value="LightYellow" />
+        <!--  جدید  -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ctrls:PersianDatePicker">
+                    <Grid>
+                        <Border
+                            x:Name="Bd"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="6">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <!--  نمایش تاریخ  -->
+                                <TextBox
+                                    x:Name="PART_TextBox"
+                                    Grid.Column="0"
+                                    Padding="2,0"
+                                    VerticalContentAlignment="Center"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    FontFamily="{TemplateBinding FontFamily}"
+                                    FontSize="{TemplateBinding FontSize}"
+                                    Foreground="{TemplateBinding Foreground}"
+                                    IsReadOnly="True" />
+
+                                <!--  دکمه باز شدن تقویم  -->
+                                <Button
+                                    x:Name="PART_Button"
+                                    Grid.Column="1"
+                                    Width="30"
+                                    Margin="4,0,4,0"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    ToolTip="باز کردن تقویم">
+                                    <Path
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Data="M7,10 L10,14 L14,8"
+                                        Stretch="Uniform"
+                                        Stroke="{TemplateBinding Foreground}"
+                                        StrokeThickness="2" />
+                                </Button>
+                            </Grid>
+                        </Border>
+
+                        <!--  🔽 پاپ‌آپ تقویم  -->
+                        <Popup
+                            x:Name="PART_Popup"
+                            AllowsTransparency="True"
+                            Placement="Bottom"
+                            StaysOpen="False">
+                            <Border
+                                Margin="0,4,0,0"
+                                Background="{TemplateBinding PopupBackground}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="1"
+                                CornerRadius="6">
+                                <ctrls:ShamsiCalendarControl x:Name="PART_Calendar" />
+                            </Border>
+                        </Popup>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Bd" Property="BorderBrush" Value="#1083FF" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Bd" Property="Background" Value="#F2F2F2" />
+                            <Setter TargetName="Bd" Property="BorderBrush" Value="#CCC" />
+                            <Setter Property="Foreground" Value="#888" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

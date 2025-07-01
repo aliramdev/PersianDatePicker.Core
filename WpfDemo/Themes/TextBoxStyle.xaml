@@ -1,0 +1,47 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="TextBox">
+        <Setter Property="FontFamily" Value="pack://application:,,,/Gym;component/Fonts/#IRANSansWeb(FaNum) Medium" />
+        <Setter Property="FlowDirection" Value="RightToLeft" />
+        <Setter Property="Padding" Value="6,4" />
+        <Setter Property="Margin" Value="0,5,0,5" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="BorderThickness" Value="1.5" />
+        <Setter Property="BorderBrush" Value="#CCC" />
+        <Setter Property="Background" Value="red" />
+        <Setter Property="Foreground" Value="Blue" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border
+                        x:Name="border"
+                        Background="Red"
+                        BorderBrush="Black"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="50"
+                        SnapsToDevicePixels="True">
+                        <ScrollViewer
+                            x:Name="PART_ContentHost"
+                            Margin="2"
+                            VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="BorderBrush" Value="#409EFF" />
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter TargetName="border" Property="BorderBrush" Value="#007ACC" />
+                            <Setter TargetName="border" Property="BorderThickness" Value="2" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="border" Property="Background" Value="#EEE" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="#AAA" />
+                            <Setter Property="Foreground" Value="#888" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
