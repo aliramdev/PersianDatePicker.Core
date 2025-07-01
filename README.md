@@ -50,7 +50,6 @@ dotnet add package PersianDatePicker.Core.Wpf
     xmlns:ctrls="clr-namespace:PersianDatePicker_Core_Wpf.Controls;assembly=PersianDatePicker.Core.Wpf">
 
     <Style TargetType="ctrls:PersianDatePicker">
-        <Setter Property="FontFamily" Value="Fonts/#IRANSansWeb(FaNum) Medium" />
         <Setter Property="FlowDirection" Value="LeftToRight" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="Foreground" Value="Black" />
@@ -67,7 +66,6 @@ dotnet add package PersianDatePicker.Core.Wpf
 
 
     <Style x:Key="DefaultDayButtonStyle" TargetType="Button">
-        <Setter Property="FontFamily" Value="Fonts/#IRANSansWeb(FaNum) Medium" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="Background" Value="White" />
         <Setter Property="Foreground" Value="Black" />
